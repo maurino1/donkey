@@ -1,0 +1,17 @@
+als gast wil ik...
+kunnen inloggen zodat ik boekingen kan huren
+boekingen zien om te kijken wat mij interreseert
+
+
+
+
+als user wil ik...
+op een foto klikken om een rondreis te boeken
+
+
+
+
+
+als admin wil ik...
+een menu om alle actieve boekingen te vinden
+wil ik de locatie van gasten kunnen bijhoeden zodat ik de klanten en mijn ezels kan zien
