@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//if you wanna make a db query put it in the route like this
+Route::get('/test', function (){ 
+    $users = DB::table('tests')
+            ->select('subject', 'email as user_email')
+            ->get();
+            
+            dd($users);
+    return view('test');
+});
+
+
+
