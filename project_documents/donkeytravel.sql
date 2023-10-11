@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 09 okt 2023 om 10:46
+-- Gegenereerd op: 11 okt 2023 om 09:11
 -- Serverversie: 10.4.28-MariaDB
 -- PHP-versie: 8.2.4
 
@@ -24,22 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `tests`
+-- Tabelstructuur voor tabel `restingspot`
 --
 
-CREATE TABLE `tests` (
-  `ID` int(11) NOT NULL,
-  `subject` varchar(16) NOT NULL,
-  `info` varchar(16) NOT NULL
+CREATE TABLE `restingspot` (
+  `id` int(8) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `adres` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Gegevens worden geëxporteerd voor tabel `tests`
+-- Tabelstructuur voor tabel `tours`
 --
 
-INSERT INTO `tests` (`ID`, `subject`, `info`) VALUES
-(1, 'rat', 'small thing'),
-(2, 'rat', 'small thing');
+CREATE TABLE `tours` (
+  `id` int(8) NOT NULL,
+  `name` int(32) NOT NULL,
+  `length` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -59,10 +63,16 @@ CREATE TABLE `users` (
 --
 
 --
--- Indexen voor tabel `tests`
+-- Indexen voor tabel `restingspot`
 --
-ALTER TABLE `tests`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `restingspot`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `tours`
+--
+ALTER TABLE `tours`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `users`
@@ -75,10 +85,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `tests`
+-- AUTO_INCREMENT voor een tabel `restingspot`
 --
-ALTER TABLE `tests`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `restingspot`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `tours`
+--
+ALTER TABLE `tours`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
