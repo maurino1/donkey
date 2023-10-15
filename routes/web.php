@@ -30,5 +30,9 @@ Route::get('/test', function (){
     return view('test');
 });
 
+//routes/web.php
 
+use App\Http\Controllers\BookingController;
+
+Route::get('/active-bookings', [BookingController::class, 'activeBookings']);
 
