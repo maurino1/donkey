@@ -34,5 +34,5 @@ Route::get('/test', function (){
 
 use App\Http\Controllers\BookingController;
 
-Route::get('/active-bookings', [BookingController::class, 'activeBookings']);
+Route::get('/active-bookings', [BookingController::class, 'showActiveBookings'])->name('bookings.active');
 
