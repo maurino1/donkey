@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,26 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-//if you wanna make a db query put it in the route like this
-Route::get('/test', function (){ 
-    $users = DB::table('tests')
-            ->select('subject', 'email as user_email')
-            ->get();
-            
-            dd($users);
-    return view('test');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//routes/web.php
-
-use App\Http\Controllers\BookingController;
-
-Route::get('/active-bookings', [BookingController::class, 'showActiveBookings'])->name('bookings.active');
-
+require __DIR__.'/auth.php';
