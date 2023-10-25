@@ -6,9 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello world
-    </h1>
+    <h1>Hello world</h1>
+   <a href="{{ url('/test') }}"> <img src="{{url('/images/placeholder.jpg')}}" alt="placeholder image"/></a>
 </body>
 </html>
-
-
