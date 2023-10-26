@@ -45,6 +45,10 @@ return view('test');
 
 use App\Http\Controllers\BookingController;
 
+<<<<<<< HEAD
 Route::get('/active-bookings', [BookingController::class, 'showActiveBookings'])->name('bookings.active');
 >>>>>>> parent of d6fecb8 (inlog en aanmelden)
+=======
+Route::get('/active-bookings', [BookingController::class, 'activeBookings']);
+>>>>>>> parent of 8b93ebc (ik heb een menu gemaakt waarmee je alle actieve boekingen kan vinden)
 
