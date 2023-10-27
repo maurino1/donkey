@@ -10,3 +10,4 @@
    <a href="{{ url('/test') }}"> <img src="{{url('/images/placeholder.jpg')}}" alt="placeholder image"/></a>
 </body>
 </html>
+ 
