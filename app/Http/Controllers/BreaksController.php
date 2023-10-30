@@ -11,4 +11,9 @@ class BreaksController extends Controller
         $breaks = "breaks list form in BreaksController";
         return view('breaks.index', ['breaks' => $breaks]);
     }
+
+    public function create()
+    {
+       return view('breaks.create');
+    }
 }

@@ -3,8 +3,8 @@
 <main class="container">
         <section>
             <div class="titlebar">
-                <h1>Products</h1>
-                <button>Add Product</button>
+                <h1>Breaks</h1>
+                <a href="{{ route('breaks.create')}}" class='btn-link'>add break</a>
             </div>
             <div class="table">
                 <div class="table-filter">
@@ -19,7 +19,7 @@
                 <div class="table-search">   
                     <div>
                         <button class="search-select">
-                           Search Product
+                           Search Breaks
                         </button>
                         <span class="search-select-arrow">
                             <i class="fas fa-caret-down"></i>
@@ -31,16 +31,16 @@
                 </div>
                 <div class="table-product-head">
                     <p>Image</p>
-                    <p>Name</p>
-                    <p>Category</p>
-                    <p>Inventory</p>
-                    <p>Actions</p>
+                    <p>Naam</p>
+                    <p>Adres</p>
+                    <p>cooördinaten</p>
+                    <p>voorzieningen</p>
                 </div>
                 <div class="table-product-body">
                     <img src="1.jpg"/>
-                    <p> Product name</p>
-                    <p>Category</p>
-                    <p>Inventory</p>
+                    <p> Breaks name</p>
+                    <p>Naam</p>
+                    <p>Adres</p>
                     <div>     
                         <button class="btn btn-success" >
                             <i class="fas fa-pencil-alt" ></i> 
