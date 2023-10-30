@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Breaks extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['naam', 'adres', 'cooördinaten', 'voorzieningen'];
 }

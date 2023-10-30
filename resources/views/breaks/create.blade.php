@@ -8,6 +8,7 @@
                 <h1>Add Breaks</h1>
                 <button>Save</button>
             </div>
+            <!--het formulier dat je kan invullen -->
             <div class="card">
                <div>
                     <label>Naam</label>
@@ -20,15 +21,17 @@
                 </div>
                <div>
                     <label>Naam</label>
-                    <select  name="" id="" >
-                        <option value="" >Email Subscription</option>
+                    <select  name="naam">
+                        @foreach (json_decode('{"Restaurant": "Restaurant", "Speeltuin": "Speeltuin", "Snackbar": "Snackbar" }',true) as $optionKey => $optionValue ) 
+                        <option value="{{$optionKey}}" >{{$optionValue}}</option>
+                        @endforeach
                     </select>
                     <hr>
                     <label>cooördinaten</label>
-                    <input type="text" class="input" >
+                    <input type="text" name="cooördinaten" >
                     <hr>
                     <label>Voorzieningen</label>
-                    <input type="text" class="input" >
+                    <input type="text" name="voorzieningen" >
                </div>
             </div>
             <div class="titlebar">
@@ -39,6 +42,7 @@
         </section>
 </main>
 <script>
+    //
     function showFile(event){
         var input = event.target;
         var reader = new FileReader();
