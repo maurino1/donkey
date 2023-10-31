@@ -8,6 +8,17 @@
                 <h1>Add Breaks</h1>
                 <button>Save</button>
             </div>
+            @if ($errors->any())
+            <div>
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+
+                </ul>
+            </div>
+
+            @endif
             <!--het formulier dat je kan invullen -->
             <div class="card">
                <div>

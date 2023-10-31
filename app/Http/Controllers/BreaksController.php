@@ -10,7 +10,7 @@ class BreaksController extends Controller
 {
     //function index aanmaken
     public function index(){
-        $breaks = "breaks list form in BreaksController";
+        $breaks = Breaks::orderby('created_at')->get();
         return view('breaks.index', ['breaks' => $breaks]);
     }
     //function create aanmaken
@@ -22,7 +22,18 @@ class BreaksController extends Controller
     //function store aanmaken
     public function store(Request $request){
 
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2028'
+        ]);
+
         $break = new Breaks;
+
+        
+       $fill_name = time() . '.' . request()->image->getClientOriginalExtension();
+       request()->image->move(public_path('images'), $file_name);
+
+
         $break->naam = $request->naam;
         $break->adres = $request->adres;
         $break->cooördinaten = $request->cooördinaten;
