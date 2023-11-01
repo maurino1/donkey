@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/active-bookings', [BookingController::class, 'showActiveBookings'])->name('bookings.active');
     Route::resource('breaks', BreaksController::class);
+   
 });
 
 
