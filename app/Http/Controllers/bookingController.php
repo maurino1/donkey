@@ -1,36 +1,58 @@
 <?php
-// app/Http/Controllers/BookingController.php
+
 namespace App\Http\Controllers;
 
-use App\Models\Booking;
 use Illuminate\Http\Request;
+use App\Models\booking;
 
-//BookingsController verbinden/erven met controller
 class BookingController extends Controller
 {
-
-    public function showActiveBookings()
-    {
-        //haal alle actieve boekingen op    
-        $activeBookings = Booking::where('status', 'active')->get();
-
-        return view('bookings.activebookings', compact('activeBookings'));
+    public function indexyes(){
+        $bookings = booking::all();
+        return view('bookings.indexyes', ['bookings' => $bookings]);
+       
     }
-    
-    
-    public function destroy($id)
-    {
-        // Zoek de boeking in de database
-        $booking = Booking::find($id);
 
-        if ($booking) {
-            // Verwijder de boeking
-            $booking->delete();
-            return redirect()->route('bookings.index')->with('success', 'Boeking is verwijderd.');
-        }
+    public function created(){
+        return view('bookings.created');
+    }
 
-        return redirect()->route('bookings.index')->with('error', 'Boeking niet gevonden.');
+    public function store(Request $request){
+       $data = $request->validate([
+        'name' => 'required',
+        'phonenumber' => 'required',
+        'status' => 'required',
+        'beginDate' => 'required',
+        'endDate' => 'required',
+        'price' => 'required|decimal:0,2',
+       ]);
+
+       $newBooking = Booking::create($data);
+
+       return redirect(route('booking.indexyes'));
+    }
+
+    public function edit(Booking $booking){
+       return view('bookings.editNu', ['booking' => $booking]);
+    }
+
+    public function update(Booking $booking, request $request ){
+        $data = $request->validate([
+            'name' => 'required',
+            'phonenumber' => 'required',
+            'status' => 'required',
+            'beginDate' => 'required',
+            'endDate' => 'required',
+            'price' => 'required|decimal:0,2',
+           ]);
+
+           $booking->update($data);
+
+           return redirect (route('booking.indexyes'))->with('success', 'Booking updated successfuly');
+    }
+
+    public function destroy(Booking $booking){
+        $booking->delete();
+        return redirect (route('booking.indexyes'))->with('success', 'Booking updated successfuly');
     }
 }
-?>
-
