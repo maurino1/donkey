@@ -29,8 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/active-bookings', [BookingController::class, 'showActiveBookings'])->name('bookings.active');
-    Route::resource('breaks', BreaksController::class);
-   
+    Route::resource('/breaks', BreaksController::class);
+    Route::get('/break', [BreaksController::class, 'create'])->name('break.create');
+    Route::get('/break', [BreaksController::class, 'destroy'])->name('break.destroy');
+    Route::delete('/active-bookings', [ProfileController::class, 'destroy'])->name('bookings.destroy');
 });
 
 

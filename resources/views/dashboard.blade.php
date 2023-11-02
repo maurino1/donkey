@@ -1,9 +1,33 @@
+<!-- resources/views/home.blade.php -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>
+    <nav>
+    <ul>
+        <li><a href="{{ asset('profile') }}">Profile</a></li>
+        <li><a href="{{ asset('active-bookings') }}">Actieve Bookings</a></li>
+        <li><a href="{{ asset('breaks') }}">Breaks for sight seeing</a></li>
+    </ul>
+</nav>
+    </h1>
+    <!-- Voeg hier verdere HTML-inhoud toe -->
+</body>
+</html>
+
+
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+
+    
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

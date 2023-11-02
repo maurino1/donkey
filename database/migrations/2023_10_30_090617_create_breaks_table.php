@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('breaks', function (Blueprint $table) {
             $table->id();
             $table->string('naam')->nullable();
+            $table->string('description')->nullable();
+            $table->string('image')->nullable();
             $table->string('adres')->nullable();
             $table->integer('cooördinaten')->nullable();
             $table->string('voorzieningen')->nullable();

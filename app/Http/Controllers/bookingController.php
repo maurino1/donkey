@@ -16,6 +16,21 @@ class BookingController extends Controller
 
         return view('bookings.activebookings', compact('activeBookings'));
     }
+    
+    
+    public function destroy($id)
+    {
+        // Zoek de boeking in de database
+        $booking = Booking::find($id);
+
+        if ($booking) {
+            // Verwijder de boeking
+            $booking->delete();
+            return redirect()->route('bookings.index')->with('success', 'Boeking is verwijderd.');
+        }
+
+        return redirect()->route('bookings.index')->with('error', 'Boeking niet gevonden.');
+    }
 }
 ?>
 

@@ -13,8 +13,8 @@ class BreaksController extends Controller
         $perPage = 5;
 
         if(!empty($keywoord)){
-            $breaks = Breaks::where('name', 'LIKE', "%$keyword%")
-            ->orWhere('category', 'LIKE', "%$keyword%")
+            $breaks = Breaks::where('naam', 'LIKE', "%$keyword%")
+            ->orWhere('voorziening', 'LIKE', "%$keyword%")
             ->latest() ->paginate($perPage);
         }else{
             $breaks = Breaks::latest()->paginate($perPage);
@@ -27,19 +27,21 @@ class BreaksController extends Controller
        return view('breaks.create');
     }
 
+
     //function store aanmaken
     public function store(Request $request){
 
         $request->validate([
             'name' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2028'
+
         ]);
 
         $break = new Breaks;
 
-        
-       $file_name = time() . '.' . request()->image->getClientOriginalExtension();
-       request()->image->move(public_path('images'), $file_name);
+        $file_name = time() . '.' . request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images'), $file_name);
+      
 
         $break = Breaks::find($request->hidden_id);
 

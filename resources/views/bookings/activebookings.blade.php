@@ -13,5 +13,11 @@
                 <li>{{ $booking->id }} - {{ $booking->status }} - {{$booking->beginDate}} - {{$booking->endDate}} - {{$booking->price}} - {{$booking->paymentStatus}} - Gebruiker: {{ $booking->user->name ?? 'none' }}</li>
             @endforeach
         </ul>
-    @endif
-@endsection
+        <form method="post" action="{{ route('bookings.destroy', $booking->id) }}">
+            @csrf
+            @method('delete')
+            <button type="submit" class="btn btn-danger">Verwijder</button>
+        </form>
+        <li><a href="{{ asset('dashboard') }}">Back</a></li>
+        @endif
+        @endsection

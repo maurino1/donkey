@@ -30,8 +30,8 @@
                     <input type="file" name="image" accept="image/*" onchange="showFile(event)">
                 </div>
                <div>
-                    <label>Naam</label>
-                    <select  name="naam">
+                    <label>voorzieningen</label>
+                    <select  name="voorzieningen">
                         @foreach (json_decode('{"Restaurant": "Restaurant", "Speeltuin": "Speeltuin", "Snackbar": "Snackbar" }',true) as $optionKey => $optionValue ) 
                         <option value="{{$optionKey}}" >{{$optionValue}}</option>
                         @endforeach
@@ -40,8 +40,8 @@
                     <label>cooördinaten</label>
                     <input type="text" name="cooördinaten" >
                     <hr>
-                    <label>Voorzieningen</label>
-                    <input type="text" name="voorzieningen" >
+                    <label>adres</label>
+                    <input type="text" name="adres" >
                </div>
             </div>
             <div class="titlebar">

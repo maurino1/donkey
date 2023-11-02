@@ -62,22 +62,26 @@
                 <div class="table-product-body">
                     @if (count($breaks) > 0)
                     @foreach ($breaks as $breaks)
-                    <img src="{{ asset('images/ezel-2645138_1280.jpg') . $breaks->image }}" style="padding-top: 4px;padding-bottom:4px"/>
+                    <img src="{{ asset('images/ezel-2645138_1280.jpg') . $breaks->image }}"/>
                     <p>{{$breaks->naam}}</p>
                     <p>{{$breaks->cooördinaten}}</p>
                     <p>{{$breaks->voorzieningen}}</p>
-                    <div style="display: flex">     
-                        <a href="{{ route('breaks.edit', $breaks->id) }}" class="btn btn-success" >
+                    <div style="display: flex">    
+
+                        <a href="{{ route('breaks.edit', $breaks->id) }}" class="btn btn-success" style="padding-top: 4px;padding-bottom:4px" >
                             <i class="fas fa-pencil-alt" ></i> 
                         </a>
+
                         <form method="post" action="{{route('breaks.destroy', $breaks->id)}}">
                         @method('delete')
 
                         @csrf
                         </form>
+                        
                         <button class="btn btn-danger" onclick="deleteConfirm(event)" >
                             <i class="far fa-trash-alt"></i>
                         </button>
+
                     </div>
                     @endforeach
                     @else
@@ -86,28 +90,29 @@
                    
                 </div>
                 <div class="table-paginate">
-                
+                <li><a href="{{ asset('dashboard') }}">Back</a></li>
+           
                 </div>
             </div>
         </section>
 </main>
+
 <script>
-    window.deleteConfirm = function (e) {
+    window.deleteConfirm = function (e) 
+    {
         e.preventDefault();
         var form = e.target.form;
         Swal.fire({
-  title: 'Are you sure?',
-  text: "You won't be able to revert this!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
-}).then((result) => {
-  if (result.isConfirmed) {
-   form.submit();
-  }
-})
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) { form.submit(); }
+        })
     }
 </script>
 @endsection
