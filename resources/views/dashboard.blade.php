@@ -5,18 +5,6 @@
     <title></title>
 </head>
 <body>
-<<<<<<< HEAD
-=======
-    <h1>
-    <nav>
-    <ul>
-        <li><a href="{{ asset('profile') }}">Profile</a></li>
-        <li><a href="{{ asset('booking') }}">Actieve Bookings</a></li>
-        <li><a href="{{ asset('breaks') }}">Breaks for sight seeing</a></li>
-    </ul>
-</nav>
-    </h1>
->>>>>>> main
     <!-- Voeg hier verdere HTML-inhoud toe -->
 </body>
 </html>
