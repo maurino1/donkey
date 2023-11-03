@@ -26,7 +26,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <ul>
                         <li><a href="{{ asset('profile') }}">Profile</a></li>
-                        <li><a href="{{ asset('active-bookings') }}">Actieve Bookings</a></li>
+                        <li><a href="{{ asset('booking') }}">Actieve Bookings</a></li>
                         <li><a href="{{ asset('breaks') }}">Breaks for sight seeing</a></li>
                     </ul>
                 </div>
