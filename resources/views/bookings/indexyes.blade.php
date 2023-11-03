@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Booking</h1>
+    <li><a href="{{ asset('booking/created') }}">Create a booking</a></li>
     <div>
         @if(session()->has('success'))
         <div>
@@ -52,5 +53,6 @@
             @endforeach
         </table>
     </div>
+    <li><a href="{{ asset('dashboard') }}">Back</a></li>
 </body>
 </html>

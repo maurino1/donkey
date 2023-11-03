@@ -33,7 +33,10 @@
 
   html,
   body {
+<<<<<<< HEAD
     /*background:var(--body-color);*/
+=======
+>>>>>>> main
     color: var(--text-light);
     height: 100%;
     min-height: 100vh;
