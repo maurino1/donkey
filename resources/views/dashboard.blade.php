@@ -9,7 +9,7 @@
     <nav>
     <ul>
         <li><a href="{{ asset('profile') }}">Profile</a></li>
-        <li><a href="{{ asset('active-bookings') }}">Actieve Bookings</a></li>
+        <li><a href="{{ asset('booking') }}">Actieve Bookings</a></li>
         <li><a href="{{ asset('breaks') }}">Breaks for sight seeing</a></li>
     </ul>
 </nav>
