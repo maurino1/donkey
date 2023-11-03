@@ -43,7 +43,7 @@ class BreaksController extends Controller
         request()->image->move(public_path('images'), $file_name);
       
 
-        $break = Breaks::find($request->hidden_id);
+        
 
         if ($break === null) {
             // Handle the case where the Breaks model is not found (null)
