@@ -54,5 +54,7 @@
         </table>
     </div>
     <li><a href="{{ asset('dashboard') }}">Back</a></li>
+</br>
+    <img src="image/istockphoto-521888447-612x612.jpg" alt="Beschrijving van de afbeelding">
 </body>
 </html>

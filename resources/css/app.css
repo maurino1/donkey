@@ -33,7 +33,7 @@
 
   html,
   body {
-    /*background:var(--body-color);*/
+    background:var(--body-color);
     background-color: lightcyan;
     color: var(--text-light);
     height: 100%;

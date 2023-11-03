@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -32,11 +31,16 @@
                 </div>
             @endif
 
+           
+            
+            
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
+            <link rel="stylesheet" type="text/css" href="apptwee.css">
+            <img src="image/donkey-3104.jpg" alt="Beschrijving van de afbeelding" width="200px" class="img">
             <p>welkom bij donkey</p>
             <p>Donkey Travel is een adventure bedrijf. Je kan op de website boeken voor een ezel-huifskartocht</p>
             <p>als je nog geen account heb, klik dan op register rechtsboven van de pagina.</p>
-            <p>heb je al een account? klik dan op login</p>
+            <p>heb je al een account? klik dan op login. ben je ingelogd druk dan rechtsboven op dashboard.</p>
            </div>
         </div>
     </body>

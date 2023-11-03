@@ -29,6 +29,7 @@
                         <li><a href="{{ asset('profile') }}">Profile</a></li>
                         <li><a href="{{ asset('booking') }}">Actieve Bookings</a></li>
                         <li><a href="{{ asset('breaks') }}">Breaks for sight seeing</a></li>
+                        <li><a href="{{ asset('restingspot/create') }}">restingspot</a></li>
                     </ul>
                 </div>
             </div>
