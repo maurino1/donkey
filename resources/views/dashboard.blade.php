@@ -1,6 +1,7 @@
 <!-- resources/views/home.blade.php -->
 <!DOCTYPE html>
 <html>
+<link href="{{ asset('../resources/cc/app.css') }}" rel="stylesheet"> 
 <head>
     <title></title>
 </head>

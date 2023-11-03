@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BreaksController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\restingspotController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,3 +45,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/restingspot', [restingspotController::class, 'index'])->name('restingspot.index');
+Route::get('/restingspot/create', [restingspotController::class, 'create'])->name('restingspot.create');
+Route::post('/restingspot', [restingspotController::class, 'store'])->name('restingspot.store');
