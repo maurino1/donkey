@@ -30,7 +30,7 @@
                         <li><a href="{{ asset('booking') }}">Actieve Bookings</a></li>
                         <li><a href="{{ asset('breaks') }}">Breaks for sight seeing</a></li>
                         <li><a href="{{ asset('restingspot/create') }}">restingspot</a></li>
-                        <li><a href="{{ asset('/') }}">Back</a></li>
+                        <a href="{{ asset('/') }}">Back</a>
                     </ul>
                 </div>
             </div>
